@@ -3,7 +3,7 @@ import 'package:supabase_social_app/features/auth/domain/entities/user_entity.da
 abstract class AuthRepository {
   Future<UserEntity?> getCurrentUser();
   Stream<UserEntity?> authStateChanges();
-  Future<UserEntity> signInWithEmailAndPasword({
+  Future<UserEntity> signInWithEmailAndPassword({
     required String email,
     required String password,
   });
