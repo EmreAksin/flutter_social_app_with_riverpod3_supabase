@@ -1,4 +1,3 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:supabase_social_app/core/providers/supabase_provider.dart';
 import 'package:supabase_social_app/features/auth/data/datasources/auth_remote_data_source.dart';
