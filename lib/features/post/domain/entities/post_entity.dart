@@ -13,7 +13,7 @@ abstract class PostEntity with _$PostEntity {
     required int likesCount,
     required int commentsCount,
     required DateTime createdAt,
-    required DataCell updatedAt,
+    required DateTime updatedAt,
     String? username,
     String? userAvatarUrl,
     bool? isLikedByCurrentUser,

@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$PostEntity {
 
- String get id; String get userId; String get content; String? get imageUrl; int get likesCount; int get commentsCount; DateTime get createdAt; DataCell get updatedAt; String? get username; String? get userAvatarUrl; bool? get isLikedByCurrentUser;
+ String get id; String get userId; String get content; String? get imageUrl; int get likesCount; int get commentsCount; DateTime get createdAt; DateTime get updatedAt; String? get username; String? get userAvatarUrl; bool? get isLikedByCurrentUser;
 /// Create a copy of PostEntity
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -45,7 +45,7 @@ abstract mixin class $PostEntityCopyWith<$Res>  {
   factory $PostEntityCopyWith(PostEntity value, $Res Function(PostEntity) _then) = _$PostEntityCopyWithImpl;
 @useResult
 $Res call({
- String id, String userId, String content, String? imageUrl, int likesCount, int commentsCount, DateTime createdAt, DataCell updatedAt, String? username, String? userAvatarUrl, bool? isLikedByCurrentUser
+ String id, String userId, String content, String? imageUrl, int likesCount, int commentsCount, DateTime createdAt, DateTime updatedAt, String? username, String? userAvatarUrl, bool? isLikedByCurrentUser
 });
 
 
@@ -72,7 +72,7 @@ as String?,likesCount: null == likesCount ? _self.likesCount : likesCount // ign
 as int,commentsCount: null == commentsCount ? _self.commentsCount : commentsCount // ignore: cast_nullable_to_non_nullable
 as int,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DataCell,username: freezed == username ? _self.username : username // ignore: cast_nullable_to_non_nullable
+as DateTime,username: freezed == username ? _self.username : username // ignore: cast_nullable_to_non_nullable
 as String?,userAvatarUrl: freezed == userAvatarUrl ? _self.userAvatarUrl : userAvatarUrl // ignore: cast_nullable_to_non_nullable
 as String?,isLikedByCurrentUser: freezed == isLikedByCurrentUser ? _self.isLikedByCurrentUser : isLikedByCurrentUser // ignore: cast_nullable_to_non_nullable
 as bool?,
@@ -160,7 +160,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String userId,  String content,  String? imageUrl,  int likesCount,  int commentsCount,  DateTime createdAt,  DataCell updatedAt,  String? username,  String? userAvatarUrl,  bool? isLikedByCurrentUser)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String userId,  String content,  String? imageUrl,  int likesCount,  int commentsCount,  DateTime createdAt,  DateTime updatedAt,  String? username,  String? userAvatarUrl,  bool? isLikedByCurrentUser)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PostEntity() when $default != null:
 return $default(_that.id,_that.userId,_that.content,_that.imageUrl,_that.likesCount,_that.commentsCount,_that.createdAt,_that.updatedAt,_that.username,_that.userAvatarUrl,_that.isLikedByCurrentUser);case _:
@@ -181,7 +181,7 @@ return $default(_that.id,_that.userId,_that.content,_that.imageUrl,_that.likesCo
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String userId,  String content,  String? imageUrl,  int likesCount,  int commentsCount,  DateTime createdAt,  DataCell updatedAt,  String? username,  String? userAvatarUrl,  bool? isLikedByCurrentUser)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String userId,  String content,  String? imageUrl,  int likesCount,  int commentsCount,  DateTime createdAt,  DateTime updatedAt,  String? username,  String? userAvatarUrl,  bool? isLikedByCurrentUser)  $default,) {final _that = this;
 switch (_that) {
 case _PostEntity():
 return $default(_that.id,_that.userId,_that.content,_that.imageUrl,_that.likesCount,_that.commentsCount,_that.createdAt,_that.updatedAt,_that.username,_that.userAvatarUrl,_that.isLikedByCurrentUser);case _:
@@ -201,7 +201,7 @@ return $default(_that.id,_that.userId,_that.content,_that.imageUrl,_that.likesCo
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String userId,  String content,  String? imageUrl,  int likesCount,  int commentsCount,  DateTime createdAt,  DataCell updatedAt,  String? username,  String? userAvatarUrl,  bool? isLikedByCurrentUser)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String userId,  String content,  String? imageUrl,  int likesCount,  int commentsCount,  DateTime createdAt,  DateTime updatedAt,  String? username,  String? userAvatarUrl,  bool? isLikedByCurrentUser)?  $default,) {final _that = this;
 switch (_that) {
 case _PostEntity() when $default != null:
 return $default(_that.id,_that.userId,_that.content,_that.imageUrl,_that.likesCount,_that.commentsCount,_that.createdAt,_that.updatedAt,_that.username,_that.userAvatarUrl,_that.isLikedByCurrentUser);case _:
@@ -226,7 +226,7 @@ class _PostEntity implements PostEntity {
 @override final  int likesCount;
 @override final  int commentsCount;
 @override final  DateTime createdAt;
-@override final  DataCell updatedAt;
+@override final  DateTime updatedAt;
 @override final  String? username;
 @override final  String? userAvatarUrl;
 @override final  bool? isLikedByCurrentUser;
@@ -261,7 +261,7 @@ abstract mixin class _$PostEntityCopyWith<$Res> implements $PostEntityCopyWith<$
   factory _$PostEntityCopyWith(_PostEntity value, $Res Function(_PostEntity) _then) = __$PostEntityCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String userId, String content, String? imageUrl, int likesCount, int commentsCount, DateTime createdAt, DataCell updatedAt, String? username, String? userAvatarUrl, bool? isLikedByCurrentUser
+ String id, String userId, String content, String? imageUrl, int likesCount, int commentsCount, DateTime createdAt, DateTime updatedAt, String? username, String? userAvatarUrl, bool? isLikedByCurrentUser
 });
 
 
@@ -288,7 +288,7 @@ as String?,likesCount: null == likesCount ? _self.likesCount : likesCount // ign
 as int,commentsCount: null == commentsCount ? _self.commentsCount : commentsCount // ignore: cast_nullable_to_non_nullable
 as int,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DataCell,username: freezed == username ? _self.username : username // ignore: cast_nullable_to_non_nullable
+as DateTime,username: freezed == username ? _self.username : username // ignore: cast_nullable_to_non_nullable
 as String?,userAvatarUrl: freezed == userAvatarUrl ? _self.userAvatarUrl : userAvatarUrl // ignore: cast_nullable_to_non_nullable
 as String?,isLikedByCurrentUser: freezed == isLikedByCurrentUser ? _self.isLikedByCurrentUser : isLikedByCurrentUser // ignore: cast_nullable_to_non_nullable
 as bool?,
