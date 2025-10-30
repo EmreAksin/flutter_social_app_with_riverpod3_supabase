@@ -22,7 +22,6 @@ class ProfileRemoteDataSource {
 
       return ProfileModel.fromJson(response);
     } catch (e) {
-      print('Profile fetch error: $e');
       rethrow;
     }
   }

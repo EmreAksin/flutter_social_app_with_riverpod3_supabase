@@ -39,6 +39,7 @@ class _PostCommentsScreenState extends ConsumerState<PostCommentsScreen> {
           .read(postControllerProvider.notifier)
           .addComment(postId: widget.postId, content: content);
 
+      if (!mounted) return;
       commentController.clear();
       FocusScope.of(context).unfocus();
       ref.invalidate(postCommentsProvider(widget.postId));
