@@ -4,6 +4,11 @@ import 'package:go_router/go_router.dart'; // GoRouter (URL routing)
 import '../../features/auth/presentation/providers/auth_providers.dart'; // Auth providers (6.1)
 import '../../features/auth/presentation/screens/login_screen.dart'; // Screens
 import '../../features/auth/presentation/screens/register_screen.dart';
+import '../../features/post/presentation/screens/create_post_screen.dart';
+import '../../features/post/presentation/screens/post_comments_screen.dart';
+import '../../features/profile/presentation/screens/edit_profile_screen.dart';
+import '../../features/profile/presentation/screens/profile_screen.dart';
+import '../../features/post/presentation/screens/feed_screen.dart';
 
 final appRouterProvider = Provider<GoRouter>((ref) {
   final authState = ref.watch(authStateChangesProvider);
@@ -43,7 +48,37 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/feed',
         pageBuilder: (context, state) =>
-            const MaterialPage(child: Center(child: Text("Home"))),
+            const MaterialPage(child: FeedScreen()),
+      ),
+
+      GoRoute(
+        path: '/create-post',
+        pageBuilder: (context, state) =>
+            const MaterialPage(child: CreatePostScreen()),
+      ),
+
+      GoRoute(
+        path: '/profile/edit',
+        pageBuilder: (context, state) =>
+            const MaterialPage(child: EditProfileScreen()),
+      ),
+
+      GoRoute(
+        path: '/profile/:userId',
+        pageBuilder: (context, state) {
+          final userId = state.pathParameters['userId']!;
+
+          return MaterialPage(child: ProfileScreen(userId: userId));
+        },
+      ),
+
+      GoRoute(
+        path: '/post/:postId/comments',
+        pageBuilder: (context, state) {
+          final postId = state.pathParameters['postId']!;
+
+          return MaterialPage(child: PostCommentsScreen(postId: postId));
+        },
       ),
     ],
 
